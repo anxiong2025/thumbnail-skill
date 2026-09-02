@@ -1,8 +1,8 @@
-# Thumbnail Prompt Library
+# High-CTR Creator Thumbnail Prompt Library
 
 English | [简体中文](PROMPTS.md)
 
-Choose an ID from the [style catalog](create-social-thumbnails/references/style-catalog.md), copy the matching prompt, replace the `{braced fields}`, and attach the real assets.
+Choose a click-driving structure from the [style catalog](create-social-thumbnails/references/style-catalog.md), copy its prompt, replace the `{braced fields}`, and attach the real assets. “High-CTR” is a design objective, not a performance guarantee.
 
 Supported general ratios: `1:1`, `4:3`, `3:4`, `4:5`, `6:7`, `16:9`, and `9:16`. A ratio can be specified independently of a platform.
 

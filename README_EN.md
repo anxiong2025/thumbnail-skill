@@ -1,20 +1,26 @@
-# Thumbnail Skill
+# High-CTR Creator Thumbnail Skill
 
 English | [简体中文](README.md)
 
-A Codex skill for designing, adapting, and reviewing social-media thumbnails with the user's real portraits, products, and screenshots. It includes working presets for Xiaohongshu, WeChat Channels, YouTube, YouTube Shorts, and Douyin.
+Create high-CTR thumbnails and creator covers for Xiaohongshu, WeChat Channels, Douyin, YouTube, and YouTube Shorts from real portraits, real products, and real screenshots.
 
-> Current version: `v0.2.1`. The first real finished cover is included as a style demonstration. Rights for third-party people, brands, and interface imagery are not established, so the example is not presented as commercially cleared.
+> **Real assets × click-driving structures × multi-platform ratios × copy-ready prompts**
+
+Start from a proven visual system instead of a blank canvas: choose a style from `S01–S10`, set the ratio, attach the assets, and replace the title. Codex then follows the production and QA workflow.
+
+> Current version: `v0.3.0`. “High-CTR” describes the design objective and does not promise views, click-through rate, virality, or commercial results. The first real finished cover is included as a style demonstration. Rights for third-party people, brands, and interface imagery are not established, so the example is not presented as commercially cleared.
 
 ## What it does
 
+- Includes ten click-driving creator-cover systems for people, products, knowledge, resources, news, and UI showcases.
+- Builds hierarchy around one-second comprehension, small-preview readability, and visible real proof.
 - Supports five platform/content presets across horizontal and vertical layouts.
 - Separates exact-use assets, style-only references, and generatable decoration.
 - Prevents AI redraws or substitutions of real screenshots, products, logos, data, and people.
 - Covers headline zones, real UI collages, portrait cutouts, and white-to-transparent title transitions.
 - Includes QA guidance for fidelity, rights language, feed-size readability, dimensions, and export.
 - Includes dependency-free Python helpers for presets and PNG/JPEG dimension checks.
-- Includes ten reusable style IDs, bilingual copy-ready prompts, and a prompt builder.
+- Includes bilingual copy-ready prompt templates and a prompt builder.
 
 ## Thumbnail examples
 

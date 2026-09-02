@@ -1,11 +1,11 @@
 ---
 name: create-social-thumbnails
-description: Create, adapt, or review high-clarity social-media thumbnails and covers for Xiaohongshu, WeChat Channels, YouTube, YouTube Shorts, and Douyin. Use when the user supplies real photos, screenshots, products, or style references and needs platform-ready raster artwork; preserve real assets exactly and do not replace them with AI-generated lookalikes.
+description: Create, adapt, or review high-CTR creator thumbnails and social-media covers for Xiaohongshu, WeChat Channels, YouTube, YouTube Shorts, and Douyin. Use for requests such as 自媒体封面, 爆款封面, high-CTR thumbnail, or click-driving cover from real photos, screenshots, products, or style references; preserve real assets exactly, avoid AI-generated lookalikes, and never promise virality or performance.
 ---
 
-# Create Social Thumbnails
+# Create High-CTR Creator Thumbnails
 
-Produce a platform-ready thumbnail that remains legible at feed size, uses the user's real assets faithfully, and has a clear click-driving visual hierarchy.
+Produce a platform-ready creator thumbnail that communicates the topic in roughly one second, remains legible at feed size, uses the user's real assets faithfully, and has a clear click-driving visual hierarchy. Treat “viral” or “爆款” as a creative objective, never as a guaranteed outcome.
 
 ## Route the request
 
