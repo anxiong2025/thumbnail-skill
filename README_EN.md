@@ -8,7 +8,7 @@ Create high-CTR thumbnails and creator covers for Xiaohongshu, WeChat Channels, 
 
 Start from a proven visual system instead of a blank canvas: choose a style from `S01–S10`, set the ratio, attach the assets, and replace the title. Codex then follows the production and QA workflow.
 
-> Current version: `v0.3.2`. “High-CTR” describes the design objective and does not promise views, click-through rate, virality, or commercial results. The first real finished cover is included as a style demonstration. Rights for third-party people, brands, and interface imagery are not established, so the example is not presented as commercially cleared.
+> Current version: `v0.3.3`. “High-CTR” describes the design objective and does not promise views, click-through rate, virality, or commercial results. The first real finished cover is included as a style demonstration. Rights for third-party people, brands, and interface imagery are not established, so the example is not presented as commercially cleared.
 
 ## What it does
 
@@ -24,20 +24,20 @@ Start from a proven visual system instead of a blank canvas: choose a style from
 
 ## Thumbnail examples
 
-See the full [style catalog](create-social-thumbnails/references/style-catalog.md). The compact prompts show the intended formula; select “Copy full prompt” to open the complete editable version.
+See the full [style catalog](create-social-thumbnails/references/style-catalog.md). Each table prompt is a directly reusable starting point; attach the real assets and replace the title, ratio, and subject details.
 
 | ID | Preview | Style | Best for | Prompt example |
 |---|---|---|---|---|
-| `S01` | <a href="demos/S01-warm-handwritten-collage-6x7/preview.png"><img src="demos/S01-warm-handwritten-collage-6x7/preview.png" width="180" alt="S01 Warm Handwritten Collage thumbnail"></a> | Warm Handwritten Collage | Resource packs, templates, design collections | `S01 + 6:7 + real collage + portrait cutout`<br>[Copy full prompt](PROMPTS_EN.md#s01-warm-handwritten-collage) |
-| `S02` | Coming soon | Face-led High CTR | Personal brands, tutorials, reactions | `S02 + 16:9 + real face + short contrast title`<br>[Copy full prompt](PROMPTS_EN.md#s02-face-led-high-ctr) |
-| `S03` | Coming soon | Clean UI Showcase | SaaS, apps, Figma, workflows | `S03 + 4:3 + real hero UI + whitespace`<br>[Copy full prompt](PROMPTS_EN.md#s03-clean-ui-showcase) |
-| `S04` | Coming soon | Dark Tech Neon | AI, coding, automation, fintech | `S04 + 16:9 + dark field + one neon accent`<br>[Copy full prompt](PROMPTS_EN.md#s04-dark-tech-neon) |
-| `S05` | Coming soon | Bold Number List | Collections, rankings, comparisons | `S05 + 3:4 + large number + real examples`<br>[Copy full prompt](PROMPTS_EN.md#s05-bold-number-list) |
-| `S06` | Coming soon | Before–After Split | Redesigns, transformations, tests | `S06 + 16:9 + real before/after + matched crop`<br>[Copy full prompt](PROMPTS_EN.md#s06-beforeafter-split) |
-| `S07` | Coming soon | News Commentary | News, analysis, explainers | `S07 + 16:9 + real topic image + factual angle`<br>[Copy full prompt](PROMPTS_EN.md#s07-news-commentary) |
-| `S08` | Coming soon | Premium Editorial | Brands, interviews, thought leadership | `S08 + 4:5 + high-quality subject + negative space`<br>[Copy full prompt](PROMPTS_EN.md#s08-premium-editorial) |
-| `S09` | Coming soon | Playful Sticker | Lifestyle, education, creator tips | `S09 + 3:4 + real subject + original stickers`<br>[Copy full prompt](PROMPTS_EN.md#s09-playful-sticker) |
-| `S10` | Coming soon | Product Hero | Launches, reviews, e-commerce | `S10 + 1:1 + real product + core benefit`<br>[Copy full prompt](PROMPTS_EN.md#s10-product-hero) |
+| `S01` | <a href="demos/S01-warm-handwritten-collage-6x7/preview.png"><img src="demos/S01-warm-handwritten-collage-6x7/preview.png" width="180" alt="S01 Warm Handwritten Collage thumbnail"></a> | Warm Handwritten Collage | Resource packs, templates, design collections | `$create-social-thumbnails Use S01 at 6:7 with ivory handwritten type, a real screenshot collage, a real portrait cutout, and a white title gradient; do not generate fake assets.` |
+| `S02` | Coming soon | Face-led High CTR | Personal brands, tutorials, reactions | `$create-social-thumbnails Use S02 at 16:9. Let the real person occupy about 40%, use a short high-contrast title, and keep only one real proof image.` |
+| `S03` | Coming soon | Clean UI Showcase | SaaS, apps, Figma, workflows | `$create-social-thumbnails Use S03 at 4:3 with a light spacious background, one dominant real product interface, and at most two supporting cards.` |
+| `S04` | Coming soon | Dark Tech Neon | AI, coding, automation, fintech | `$create-social-thumbnails Use S04 at 16:9 with a near-black field, one neon accent, and a real dashboard or code screen; do not invent data.` |
+| `S05` | Coming soon | Bold Number List | Collections, rankings, comparisons | `$create-social-thumbnails Use S05 at 3:4. Make the quantity dominant, arrange 3–6 real examples below it, and use only one emphasis mark.` |
+| `S06` | Coming soon | Before–After Split | Redesigns, transformations, tests | `$create-social-thumbnails Use S06 at 16:9 with real before-and-after images, matched crops, and clear labels; do not exaggerate the result.` |
+| `S07` | Coming soon | News Commentary | News, analysis, explainers | `$create-social-thumbnails Use S07 at 16:9 with a real topic image and a concise factual angle; do not fabricate quotes or conclusions.` |
+| `S08` | Coming soon | Premium Editorial | Brands, interviews, thought leadership | `$create-social-thumbnails Use S08 at 4:5 with muted neutrals, a high-quality real subject, elegant serif type, and deliberate negative space.` |
+| `S09` | Coming soon | Playful Sticker | Lifestyle, education, creator tips | `$create-social-thumbnails Use S09 at 3:4 with a real person or product, original doodles and tape, and two or three accent colors.` |
+| `S10` | Coming soon | Product Hero | Launches, reviews, e-commerce | `$create-social-thumbnails Use S10 at 1:1. Make the real product the hero, lead with the core benefit, and use a clean brand field with natural light.` |
 
 The existing Figma-template cover is classified as **`S01 Warm Handwritten Collage` as the primary style, with `S02 Face-led High CTR` as a secondary trait**. It uses `S01` as its main ID because the defining system is ivory paper, marker typography, coral/blue strokes, a real interface collage, and a title gradient; the person strengthens the click driver without defining the base layout. See the [full demo notes](demos/S01-warm-handwritten-collage-6x7/README.md).
 
@@ -105,7 +105,7 @@ Do not generate or redraw the product screenshots, and do not change the person'
 
 You can also describe the task normally. Codex may select the skill automatically when the request matches its description.
 
-For a quick starting point, open [PROMPTS_EN.md](PROMPTS_EN.md), choose `S01–S10`, and replace the braced title, ratio, and asset fields.
+For a quick starting point, copy a prompt directly from the “Thumbnail examples” table, then add the title and attach the assets.
 
 ### Recommended inputs
 
@@ -161,8 +161,6 @@ The scripts verify technical properties only. They do not replace visual, factua
 thumbnail-skill/
 ├── README.md
 ├── README_EN.md
-├── PROMPTS.md
-├── PROMPTS_EN.md
 ├── LICENSE
 ├── demos/
 │   └── README.md

@@ -8,7 +8,7 @@
 
 无需从空白画布开始：选择 `S01–S10` 风格、指定比例、上传素材并替换标题，即可让 Codex 按完整 SOP 制作和检查封面。
 
-> 当前版本：`v0.3.2`。“爆款”表示以提高信息流点击吸引力为目标的设计方法，不代表或保证播放量、点击率与商业结果。首个真实成品已经作为风格演示加入；其中第三方人物、品牌和界面素材的授权状态未确认，因此不代表可商用。
+> 当前版本：`v0.3.3`。“爆款”表示以提高信息流点击吸引力为目标的设计方法，不代表或保证播放量、点击率与商业结果。首个真实成品已经作为风格演示加入；其中第三方人物、品牌和界面素材的授权状态未确认，因此不代表可商用。
 
 ## 核心能力
 
@@ -24,20 +24,20 @@
 
 ## 缩略图示例
 
-完整说明见 [风格目录](create-social-thumbnails/references/style-catalog.md)。表格中的 Prompt 示例用于快速理解，点击“复制完整 Prompt”可以打开可直接修改的完整版本。
+完整说明见 [风格目录](create-social-thumbnails/references/style-catalog.md)。表格中的 Prompt 是可直接复制修改的大概示例；上传真实素材后，把标题、比例和内容换成自己的即可。
 
 | 编号 | 预览效果 | 风格 | 适合内容 | Prompt 示例 |
 |---|---|---|---|---|
-| `S01` | <a href="demos/S01-warm-handwritten-collage-6x7/preview.png"><img src="demos/S01-warm-handwritten-collage-6x7/preview.png" width="180" alt="S01 暖白手写拼贴缩略图"></a> | 暖白手写拼贴 | 资源包、模板、设计合集 | `S01 + 6:7 + 真实拼图 + 真人抠图`<br>[复制完整 Prompt](PROMPTS.md#s01-暖白手写拼贴) |
-| `S02` | 待补充 | 人物高点击 | 个人 IP、教程、反应类 | `S02 + 16:9 + 真人主视觉 + 强对比短标题`<br>[复制完整 Prompt](PROMPTS.md#s02-人物高点击) |
-| `S03` | 待补充 | 极简 UI 展示 | SaaS、App、Figma、工作流 | `S03 + 4:3 + 真实主界面 + 留白`<br>[复制完整 Prompt](PROMPTS.md#s03-极简-ui-展示) |
-| `S04` | 待补充 | 深色科技霓虹 | AI、编程、自动化、金融科技 | `S04 + 16:9 + 深色背景 + 单色霓虹`<br>[复制完整 Prompt](PROMPTS.md#s04-深色科技霓虹) |
-| `S05` | 待补充 | 大数字清单 | 合集、排行榜、对比 | `S05 + 3:4 + 大数字 + 真实案例清单`<br>[复制完整 Prompt](PROMPTS.md#s05-大数字清单) |
-| `S06` | 待补充 | 前后对比 | 改版、改造、测试结果 | `S06 + 16:9 + 真实前后图 + 对应裁切`<br>[复制完整 Prompt](PROMPTS.md#s06-前后对比) |
-| `S07` | 待补充 | 新闻观点 | 热点、分析、知识解读 | `S07 + 16:9 + 真实事件图 + 事实角度`<br>[复制完整 Prompt](PROMPTS.md#s07-新闻观点) |
-| `S08` | 待补充 | 高级杂志 | 品牌、访谈、思想内容 | `S08 + 4:5 + 高清主体 + 高级留白`<br>[复制完整 Prompt](PROMPTS.md#s08-高级杂志) |
-| `S09` | 待补充 | 活力贴纸 | 生活方式、教育、创作者技巧 | `S09 + 3:4 + 真人/产品 + 原创贴纸`<br>[复制完整 Prompt](PROMPTS.md#s09-活力贴纸) |
-| `S10` | 待补充 | 产品主视觉 | 新品、评测、电商 | `S10 + 1:1 + 真实产品 + 核心收益`<br>[复制完整 Prompt](PROMPTS.md#s10-产品主视觉) |
+| `S01` | <a href="demos/S01-warm-handwritten-collage-6x7/preview.png"><img src="demos/S01-warm-handwritten-collage-6x7/preview.png" width="180" alt="S01 暖白手写拼贴缩略图"></a> | 暖白手写拼贴 | 资源包、模板、设计合集 | `$create-social-thumbnails 使用 S01，6:7；暖白手写标题，下方使用真实截图拼图和真人抠图，标题下加白色渐变，不生成假素材。` |
+| `S02` | 待补充 | 人物高点击 | 个人 IP、教程、反应类 | `$create-social-thumbnails 使用 S02，16:9；真人占画面约 40%，使用强对比短标题，背景只保留一张真实结果图。` |
+| `S03` | 待补充 | 极简 UI 展示 | SaaS、App、Figma、工作流 | `$create-social-thumbnails 使用 S03，4:3；浅色留白背景，以一张真实产品界面为主，最多加入两张辅助卡片。` |
+| `S04` | 待补充 | 深色科技霓虹 | AI、编程、自动化、金融科技 | `$create-social-thumbnails 使用 S04，16:9；近黑背景搭配一种霓虹色，突出真实仪表盘或代码界面，不虚构数据。` |
+| `S05` | 待补充 | 大数字清单 | 合集、排行榜、对比 | `$create-social-thumbnails 使用 S05，3:4；把数量做成最大元素，下方排列 3–6 个真实案例，只保留一处强调标记。` |
+| `S06` | 待补充 | 前后对比 | 改版、改造、测试结果 | `$create-social-thumbnails 使用 S06，16:9；用真实前后图做左右对比，保持对应裁切，清楚标记改造前后。` |
+| `S07` | 待补充 | 新闻观点 | 热点、分析、知识解读 | `$create-social-thumbnails 使用 S07，16:9；采用真实事件图片和简短事实角度，不虚构引用或未经证实的结论。` |
+| `S08` | 待补充 | 高级杂志 | 品牌、访谈、思想内容 | `$create-social-thumbnails 使用 S08，4:5；中性低饱和背景，高清人物或产品搭配衬线标题和大面积留白。` |
+| `S09` | 待补充 | 活力贴纸 | 生活方式、教育、创作者技巧 | `$create-social-thumbnails 使用 S09，3:4；使用真实人物或产品，搭配原创涂鸦、胶带和两到三种强调色。` |
+| `S10` | 待补充 | 产品主视觉 | 新品、评测、电商 | `$create-social-thumbnails 使用 S10，1:1；放大真实产品，以核心收益作主标题，使用干净品牌背景和自然光影。` |
 
 现有的 Figma 模板封面归为 **`S01 暖白手写拼贴`主风格 + `S02 人物高点击`辅助特征**。主编号使用 `S01`，因为最明显的识别元素是暖白纸张、手写大标题、橙蓝笔刷、真实界面拼贴和顶部渐变；人物负责增强点击力，但不是基础构图类型。查看 [完整 Demo 说明](demos/S01-warm-handwritten-collage-6x7/README.md)。
 
@@ -105,7 +105,7 @@ $create-social-thumbnails
 
 也可以直接描述任务；当请求与 Skill 的说明匹配时，Codex 可以自动选择它。
 
-如果只想快速套用风格，可以打开 [PROMPTS.md](PROMPTS.md)，选择 `S01–S10` 后替换大括号里的标题、比例和素材说明。
+如果只想快速套用风格，直接复制“缩略图示例”表格中的 Prompt，再补充标题和上传素材即可。
 
 ### 建议提供的内容
 
@@ -161,8 +161,6 @@ python3 create-social-thumbnails/scripts/verify_thumbnail.py cover.jpg --platfor
 thumbnail-skill/
 ├── README.md
 ├── README_EN.md
-├── PROMPTS.md
-├── PROMPTS_EN.md
 ├── LICENSE
 ├── demos/
 │   └── README.md
