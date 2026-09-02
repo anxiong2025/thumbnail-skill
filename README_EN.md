@@ -4,7 +4,7 @@ English | [简体中文](README.md)
 
 A Codex skill for designing, adapting, and reviewing social-media thumbnails with the user's real portraits, products, and screenshots. It includes working presets for Xiaohongshu, WeChat Channels, YouTube, YouTube Shorts, and Douyin.
 
-> Current version: `v0.1.0`. Visual demos will be added only after their asset rights are documented. The initial release does not pad the gallery with fake interfaces or AI substitute people.
+> Current version: `v0.2.0`. Visual demos will be added only after their asset rights are documented. The initial style library does not pad the gallery with fake interfaces or AI substitute people.
 
 ## What it does
 
@@ -14,6 +14,26 @@ A Codex skill for designing, adapting, and reviewing social-media thumbnails wit
 - Covers headline zones, real UI collages, portrait cutouts, and white-to-transparent title transitions.
 - Includes QA guidance for fidelity, rights language, feed-size readability, dimensions, and export.
 - Includes dependency-free Python helpers for presets and PNG/JPEG dimension checks.
+- Includes ten reusable style IDs, bilingual copy-ready prompts, and a prompt builder.
+
+## Choose a cover style
+
+See the full [style catalog](create-social-thumbnails/references/style-catalog.md) and the copy-ready [English prompt library](PROMPTS_EN.md).
+
+| ID | Style | Best for |
+|---|---|---|
+| `S01` | Warm Handwritten Collage | Resource packs, templates, design collections |
+| `S02` | Face-led High CTR | Personal brands, tutorials, reactions |
+| `S03` | Clean UI Showcase | SaaS, apps, Figma, workflows |
+| `S04` | Dark Tech Neon | AI, coding, automation, fintech |
+| `S05` | Bold Number List | Collections, rankings, comparisons |
+| `S06` | Before–After Split | Redesigns, transformations, tests |
+| `S07` | News Commentary | News, analysis, explainers |
+| `S08` | Premium Editorial | Brands, interviews, thought leadership |
+| `S09` | Playful Sticker | Lifestyle, education, creator tips |
+| `S10` | Product Hero | Launches, reviews, e-commerce |
+
+To use one, specify something like “`S01 + 6:7`” or “`S02 + 16:9`,” then replace the title and attach the real assets.
 
 ## Platform presets
 
@@ -27,9 +47,23 @@ A Codex skill for designing, adapting, and reviewing social-media thumbnails wit
 
 Platform interfaces change. The Xiaohongshu, WeChat Channels, and Douyin dimensions are practical project presets, so check the current in-app crop preview before publishing. The YouTube values follow [YouTube Help](https://support.google.com/youtube/answer/72431?hl=en).
 
+### Ratio-only presets
+
+You can also generate a cover by ratio without naming a platform:
+
+| Ratio | Default canvas | Typical use |
+|---:|---:|---|
+| `1:1` | 1080 × 1080 | Square social cover |
+| `4:3` | 1600 × 1200 | Landscape presentation or classic video cover |
+| `3:4` | 1080 × 1440 | Portrait social cover |
+| `4:5` | 1080 × 1350 | Portrait feed cover |
+| `6:7` | 1080 × 1260 | WeChat Channels-style portrait cover |
+| `16:9` | 1920 × 1080 | General landscape video cover |
+| `9:16` | 1080 × 1920 | Full-height vertical video cover |
+
 ## Installation
 
-The skill requires a Codex version with Agent Skills support. The two helper scripts require Python 3.10 or newer and have no third-party Python dependencies.
+The skill requires a Codex version with Agent Skills support. The three helper scripts require Python 3.10 or newer and have no third-party Python dependencies.
 
 ### Option 1: Ask Codex to install it (recommended)
 
@@ -77,6 +111,8 @@ Do not generate or redraw the product screenshots, and do not change the person'
 
 You can also describe the task normally. Codex may select the skill automatically when the request matches its description.
 
+For a quick starting point, open [PROMPTS_EN.md](PROMPTS_EN.md), choose `S01–S10`, and replace the braced title, ratio, and asset fields.
+
 ### Recommended inputs
 
 - target platform and content type;
@@ -106,13 +142,23 @@ Inspect presets:
 
 ```bash
 python3 create-social-thumbnails/scripts/platform_presets.py --list
+python3 create-social-thumbnails/scripts/platform_presets.py --list-ratios
+python3 create-social-thumbnails/scripts/platform_presets.py --ratio 4:3 --json
 python3 create-social-thumbnails/scripts/platform_presets.py --platform wechat --json
+```
+
+Build an editable prompt:
+
+```bash
+python3 create-social-thumbnails/scripts/prompt_builder.py --list-styles --language en
+python3 create-social-thumbnails/scripts/prompt_builder.py --style S01 --ratio 16:9 --title "400+ Figma Design Templates" --platform YouTube --language en
 ```
 
 Verify a PNG or JPEG export:
 
 ```bash
 python3 create-social-thumbnails/scripts/verify_thumbnail.py cover.png --platform wechat-channels
+python3 create-social-thumbnails/scripts/verify_thumbnail.py cover.png --ratio 4:3
 python3 create-social-thumbnails/scripts/verify_thumbnail.py cover.jpg --platform youtube --aspect-only
 ```
 
@@ -124,6 +170,8 @@ The scripts verify technical properties only. They do not replace visual, factua
 thumbnail-skill/
 ├── README.md
 ├── README_EN.md
+├── PROMPTS.md
+├── PROMPTS_EN.md
 ├── LICENSE
 ├── demos/
 │   └── README.md
@@ -135,9 +183,11 @@ thumbnail-skill/
     │   ├── asset-integrity.md
     │   ├── composition-patterns.md
     │   ├── platform-specs.md
-    │   └── qa-checklist.md
+    │   ├── qa-checklist.md
+    │   └── style-catalog.md
     └── scripts/
         ├── platform_presets.py
+        ├── prompt_builder.py
         └── verify_thumbnail.py
 ```
 

@@ -14,6 +14,22 @@ YouTube's current help page recommends 3840 × 2160 for videos and 2160 × 3840 
 
 The other dimensions are practical production presets rather than guarantees of a fixed official upload specification. When a client, publishing tool, or current in-app prompt supplies a different requirement, follow that requirement and keep the ratio unless the platform says otherwise.
 
+## Generic ratio-only presets
+
+Use these when the user specifies a ratio instead of a platform, or requests a deliberate custom canvas for a platform.
+
+| Ratio | Working canvas | Typical use |
+|---:|---:|---|
+| `1:1` | 1080 × 1080 | Square social cover |
+| `4:3` | 1600 × 1200 | Landscape presentation or classic video cover |
+| `3:4` | 1080 × 1440 | Portrait social cover |
+| `4:5` | 1080 × 1350 | Portrait feed cover |
+| `6:7` | 1080 × 1260 | WeChat Channels-style portrait cover |
+| `16:9` | 1920 × 1080 | General landscape video cover |
+| `9:16` | 1080 × 1920 | Full-height vertical video cover |
+
+When both platform and ratio are supplied, follow the explicit ratio and treat the platform as context for safe areas and feed behavior. For YouTube, prefer the higher official platform preset unless the user explicitly asks for a smaller 16:9 export.
+
 ## Safe-area guidance
 
 These margins are design guidance, not platform-enforced metadata:

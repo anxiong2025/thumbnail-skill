@@ -4,7 +4,7 @@
 
 一个面向 Codex 的社交媒体封面制作 Skill：使用用户提供的真实人物、产品和截图，按照小红书、视频号、YouTube、YouTube Shorts、抖音的常用比例完成设计、适配与质量检查。
 
-> 当前版本：`v0.1.0`。Demo 将在素材授权信息完整后加入；初始版本不使用假界面或 AI 替代人物充数。
+> 当前版本：`v0.2.0`。Demo 将在素材授权信息完整后加入；初始风格库不使用假界面或 AI 替代人物充数。
 
 ## 核心能力
 
@@ -14,6 +14,26 @@
 - 支持标题区、真实拼图、人物抠图、白色到透明渐变等常用封面结构。
 - 内置素材真实性、商业授权、可读性、尺寸和导出 QA 清单。
 - 提供无第三方依赖的 Python 尺寸预设与 PNG/JPEG 校验脚本。
+- 提供 10 类可复用风格编号、中英文提示词模板和提示词生成器。
+
+## 选择封面风格
+
+完整说明见 [风格目录](create-social-thumbnails/references/style-catalog.md)，可直接复制的版本见 [中文提示词库](PROMPTS.md)。
+
+| 编号 | 风格 | 适合内容 |
+|---|---|---|
+| `S01` | 暖白手写拼贴 | 资源包、模板、设计合集 |
+| `S02` | 人物高点击 | 个人 IP、教程、反应类 |
+| `S03` | 极简 UI 展示 | SaaS、App、Figma、工作流 |
+| `S04` | 深色科技霓虹 | AI、编程、自动化、金融科技 |
+| `S05` | 大数字清单 | 合集、排行榜、对比 |
+| `S06` | 前后对比 | 改版、改造、测试结果 |
+| `S07` | 新闻观点 | 热点、分析、知识解读 |
+| `S08` | 高级杂志 | 品牌、访谈、思想内容 |
+| `S09` | 活力贴纸 | 生活方式、教育、创作者技巧 |
+| `S10` | 产品主视觉 | 新品、评测、电商 |
+
+使用时只需指定“`S01 + 6:7`”或“`S02 + 16:9`”，再替换标题和真实素材。
 
 ## 平台预设
 
@@ -27,9 +47,23 @@
 
 平台界面会变化，小红书、视频号和抖音的尺寸在本项目中属于实用工作预设；发布前仍应检查当时 App 的裁切预览。YouTube 尺寸依据 [YouTube Help](https://support.google.com/youtube/answer/72431?hl=en)。
 
+### 独立比例预设
+
+不指定平台时，也可以直接生成这些比例：
+
+| 比例 | 默认画布 | 常见用途 |
+|---:|---:|---|
+| `1:1` | 1080 × 1080 | 方形社交封面 |
+| `4:3` | 1600 × 1200 | 横版展示、经典视频封面 |
+| `3:4` | 1080 × 1440 | 竖版社交封面 |
+| `4:5` | 1080 × 1350 | 竖版信息流 |
+| `6:7` | 1080 × 1260 | 视频号式竖版封面 |
+| `16:9` | 1920 × 1080 | 通用横版视频封面 |
+| `9:16` | 1080 × 1920 | 全屏竖版视频封面 |
+
 ## 安装
 
-运行 Skill 需要支持 Agent Skills 的 Codex。两个辅助脚本需要 Python 3.10 或更高版本，不依赖第三方 Python 包。
+运行 Skill 需要支持 Agent Skills 的 Codex。三个辅助脚本需要 Python 3.10 或更高版本，不依赖第三方 Python 包。
 
 ### 方法一：让 Codex 安装（推荐）
 
@@ -77,6 +111,8 @@ $create-social-thumbnails
 
 也可以直接描述任务；当请求与 Skill 的说明匹配时，Codex 可以自动选择它。
 
+如果只想快速套用风格，可以打开 [PROMPTS.md](PROMPTS.md)，选择 `S01–S10` 后替换大括号里的标题、比例和素材说明。
+
 ### 建议提供的内容
 
 - 目标平台和内容类型；
@@ -106,13 +142,23 @@ $create-social-thumbnails 审核这张抖音封面：检查小图可读性、安
 
 ```bash
 python3 create-social-thumbnails/scripts/platform_presets.py --list
+python3 create-social-thumbnails/scripts/platform_presets.py --list-ratios
+python3 create-social-thumbnails/scripts/platform_presets.py --ratio 4:3 --json
 python3 create-social-thumbnails/scripts/platform_presets.py --platform wechat --json
+```
+
+生成可编辑提示词：
+
+```bash
+python3 create-social-thumbnails/scripts/prompt_builder.py --list-styles
+python3 create-social-thumbnails/scripts/prompt_builder.py --style S01 --ratio 16:9 --title "400+ Figma 设计模板" --platform YouTube
 ```
 
 校验 PNG/JPEG：
 
 ```bash
 python3 create-social-thumbnails/scripts/verify_thumbnail.py cover.png --platform wechat-channels
+python3 create-social-thumbnails/scripts/verify_thumbnail.py cover.png --ratio 4:3
 python3 create-social-thumbnails/scripts/verify_thumbnail.py cover.jpg --platform youtube --aspect-only
 ```
 
@@ -124,6 +170,8 @@ python3 create-social-thumbnails/scripts/verify_thumbnail.py cover.jpg --platfor
 thumbnail-skill/
 ├── README.md
 ├── README_EN.md
+├── PROMPTS.md
+├── PROMPTS_EN.md
 ├── LICENSE
 ├── demos/
 │   └── README.md
@@ -135,9 +183,11 @@ thumbnail-skill/
     │   ├── asset-integrity.md
     │   ├── composition-patterns.md
     │   ├── platform-specs.md
-    │   └── qa-checklist.md
+    │   ├── qa-checklist.md
+    │   └── style-catalog.md
     └── scripts/
         ├── platform_presets.py
+        ├── prompt_builder.py
         └── verify_thumbnail.py
 ```
 

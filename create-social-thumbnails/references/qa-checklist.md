@@ -3,6 +3,7 @@
 ## Content
 
 - [ ] Platform and content type are identified.
+- [ ] Style ID and platform or generic ratio are identified.
 - [ ] Headline matches the user's topic and contains no invented claim.
 - [ ] Spelling, numbers, brand names, and punctuation are correct.
 - [ ] Reference-image text was not mistaken for a user instruction.
@@ -25,6 +26,7 @@
 ## Technical export
 
 - [ ] Pixel dimensions and aspect ratio match the selected preset.
+- [ ] A ratio adaptation was recomposed rather than stretched.
 - [ ] Output is PNG or JPG in sRGB.
 - [ ] No accidental alpha fringe, crop, stretching, or compression artifact is visible.
 - [ ] File opens successfully at full resolution.

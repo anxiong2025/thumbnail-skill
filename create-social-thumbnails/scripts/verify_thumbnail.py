@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify PNG or JPEG dimensions against a social-thumbnail platform preset."""
+"""Verify PNG or JPEG dimensions against a platform or generic ratio preset."""
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ import struct
 import sys
 from pathlib import Path
 
-from platform_presets import PRESETS, resolve_platform
+from platform_presets import PLATFORM_PRESETS, RATIO_PRESETS, resolve_platform, resolve_ratio
 
 
 def png_size(path: Path) -> tuple[int, int] | None:
@@ -57,13 +57,27 @@ def image_size(path: Path) -> tuple[int, int]:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("image", type=Path, help="PNG or JPEG file to verify")
-    parser.add_argument("--platform", required=True, help="Platform preset or alias")
+    target = parser.add_mutually_exclusive_group(required=True)
+    target.add_argument("--platform", help="Platform preset or alias")
+    target.add_argument("--ratio", help="Generic ratio preset, such as 4:3 or 16:9")
     parser.add_argument("--aspect-only", action="store_true", help="Accept non-canonical dimensions when the aspect ratio matches")
     args = parser.parse_args()
 
-    platform = resolve_platform(args.platform)
-    if platform not in PRESETS:
-        parser.error(f"unknown platform '{args.platform}'. Choose: {', '.join(PRESETS)}")
+    if args.platform:
+        key = resolve_platform(args.platform)
+        if key not in PLATFORM_PRESETS:
+            parser.error(f"unknown platform '{args.platform}'. Choose: {', '.join(PLATFORM_PRESETS)}")
+        preset = PLATFORM_PRESETS[key]
+        target_name = key
+        expected_ratio_label = str(preset["ratio"])
+    else:
+        key = resolve_ratio(args.ratio)
+        if key not in RATIO_PRESETS:
+            parser.error(f"unknown ratio '{args.ratio}'. Choose: {', '.join(RATIO_PRESETS)}")
+        preset = RATIO_PRESETS[key]
+        target_name = f"ratio {key}"
+        expected_ratio_label = key
+
     if not args.image.is_file():
         parser.error(f"image not found: {args.image}")
 
@@ -73,15 +87,14 @@ def main() -> int:
         print(f"FAIL: {exc}", file=sys.stderr)
         return 2
 
-    preset = PRESETS[platform]
     expected_width = int(preset["width"])
     expected_height = int(preset["height"])
     ratio_matches = abs(width / height - expected_width / expected_height) <= 0.001
     exact_matches = width == expected_width and height == expected_height
     passed = ratio_matches if args.aspect_only else exact_matches
-    requirement = f"ratio {preset['ratio']}" if args.aspect_only else f"{expected_width}x{expected_height}"
+    requirement = f"aspect {expected_ratio_label}" if args.aspect_only else f"{expected_width}x{expected_height}"
     result = "PASS" if passed else "FAIL"
-    print(f"{result}: {args.image} is {width}x{height}; {platform} requires {requirement}.")
+    print(f"{result}: {args.image} is {width}x{height}; {target_name} requires {requirement}.")
     return 0 if passed else 1
 
 

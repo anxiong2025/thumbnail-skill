@@ -9,17 +9,19 @@ Produce a platform-ready thumbnail that remains legible at feed size, uses the u
 
 ## Route the request
 
-1. Identify the target platform and content type.
-2. Read [references/platform-specs.md](references/platform-specs.md) for the matching canvas and export preset.
-3. Read [references/composition-patterns.md](references/composition-patterns.md) when choosing a layout, creating variants, or reproducing the title-to-image gradient treatment.
-4. Read [references/asset-integrity.md](references/asset-integrity.md) whenever the request includes user photos, product screenshots, brands, public figures, or a commercial-use claim.
-5. Before delivery, follow [references/qa-checklist.md](references/qa-checklist.md).
+1. Identify the target platform and content type. Treat the requested ratio as a separate choice: it may use a platform preset or a generic `1:1`, `4:3`, `3:4`, `4:5`, `6:7`, `16:9`, or `9:16` canvas.
+2. Read [references/platform-specs.md](references/platform-specs.md) for the matching platform or ratio-only canvas and export preset.
+3. If the user names a style ID, asks what styles are available, or needs a reusable prompt, read [references/style-catalog.md](references/style-catalog.md). Preserve the chosen ID in variants and delivery notes.
+4. Read [references/composition-patterns.md](references/composition-patterns.md) when adapting the selected style to supplied assets, creating variants, or reproducing the title-to-image gradient treatment.
+5. Read [references/asset-integrity.md](references/asset-integrity.md) whenever the request includes user photos, product screenshots, brands, public figures, or a commercial-use claim.
+6. Before delivery, follow [references/qa-checklist.md](references/qa-checklist.md).
 
 ## Intake
 
 Collect or infer these inputs:
 
-- target platform and content type;
+- target platform, content type, and requested ratio;
+- style ID `S01` through `S10`, or enough context to select one;
 - primary title and optional supporting text;
 - exact-use assets such as the user's portrait, real screenshots, products, or logos;
 - style-only references;
@@ -40,7 +42,7 @@ Never redraw a real interface screenshot, product, document, data visualization,
 
 ## Build the composition
 
-1. Create the exact target canvas before laying out content.
+1. Create the exact target canvas before laying out content. Never stretch an existing cover to change ratios; recompose it.
 2. Establish one dominant promise, one dominant subject, and one supporting proof area.
 3. Keep the main title short enough to understand in roughly one second. Prefer two hierarchy levels over many equal-sized labels.
 4. Reserve UI-safe margins and avoid placing essential text or faces near edges.
@@ -66,7 +68,11 @@ Run the bundled helpers when Python is available:
 
 ```bash
 python3 scripts/platform_presets.py --list
+python3 scripts/platform_presets.py --list-ratios
+python3 scripts/prompt_builder.py --list-styles
+python3 scripts/prompt_builder.py --style S01 --ratio 16:9 --title "400+ Figma Templates"
 python3 scripts/verify_thumbnail.py output.png --platform wechat-channels
+python3 scripts/verify_thumbnail.py output.png --ratio 4:3
 ```
 
 Use `--aspect-only` only when the user intentionally requests a non-canonical resolution. The verifier checks technical conformance; still perform visual QA at full size and at a small feed preview.
@@ -76,7 +82,8 @@ Use `--aspect-only` only when the user intentionally requests a non-canonical re
 Report:
 
 - the final file path and pixel dimensions;
-- the platform preset used;
+- the platform preset or generic ratio used;
+- the style ID used;
 - which supplied real assets were preserved;
 - any assumptions or unsupported native-file claims;
 - a rights caveat when commercial use is requested but third-party rights are not documented.
