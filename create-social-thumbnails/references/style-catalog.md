@@ -1,6 +1,6 @@
 # Style catalog
 
-Select one primary style ID. Treat each style as a composition system, not a fixed visual to copy. The user's title, real assets, brand, and platform ratio always take priority.
+The IDs below are optional catalog labels for browsing, demos, and internal notes—not commands the user must memorize. Users can say “暖白手写拼贴”, “有一点杂志感”, or provide a visual reference. Follow their natural-language direction first, then map it to the closest system when useful. Treat each style as a composition system, not a fixed visual to copy. The user's title, real assets, brand, and platform ratio always take priority.
 
 | ID | Style | Best for | Dominant click driver |
 |---|---|---|---|
@@ -105,4 +105,4 @@ Select one primary style ID. Treat each style as a composition system, not a fix
 - Use `S08` when authority and taste matter more than maximum visual noise.
 - Use `S09` for approachable creator content and `S10` for a single product story.
 
-When two styles are requested, choose one as the base and borrow at most one secondary trait. For example: `S01 + S02` means warm handwritten collage with a stronger supplied portrait, not two competing layouts.
+When two styles are requested, choose one as the base and borrow at most one secondary trait. Natural combinations such as “暖白手写拼贴，加一点人物高点击” are preferred; the equivalent catalog note may be `S01 + S02`, but the user does not need to provide those IDs.

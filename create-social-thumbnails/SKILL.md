@@ -11,7 +11,7 @@ Produce a platform-ready creator thumbnail that communicates the topic in roughl
 
 1. Identify the target platform and content type. Treat the requested ratio as a separate choice: it may use a platform preset or a generic `1:1`, `4:3`, `3:4`, `4:5`, `6:7`, `16:9`, or `9:16` canvas.
 2. Read [references/platform-specs.md](references/platform-specs.md) for the matching platform or ratio-only canvas and export preset.
-3. If the user names a style ID, asks what styles are available, or needs a reusable prompt, read [references/style-catalog.md](references/style-catalog.md). Preserve the chosen ID in variants and delivery notes.
+3. If the user names a style ID, uses a natural-language style phrase, supplies a style reference, asks what styles are available, or needs a reusable prompt, read [references/style-catalog.md](references/style-catalog.md). Catalog IDs are optional organization labels; never require one in the user's prompt.
 4. Read [references/composition-patterns.md](references/composition-patterns.md) when adapting the selected style to supplied assets, creating variants, or reproducing the title-to-image gradient treatment.
 5. Read [references/asset-integrity.md](references/asset-integrity.md) whenever the request includes user photos, product screenshots, brands, public figures, or a commercial-use claim.
 6. Before delivery, follow [references/qa-checklist.md](references/qa-checklist.md).
@@ -21,7 +21,7 @@ Produce a platform-ready creator thumbnail that communicates the topic in roughl
 Collect or infer these inputs:
 
 - target platform, content type, and requested ratio;
-- style ID `S01` through `S10`, or enough context to select one;
+- a style name, style reference, or free-form visual description; a catalog ID `S01` through `S10` is optional;
 - primary title and optional supporting text;
 - exact-use assets such as the user's portrait, real screenshots, products, or logos;
 - style-only references;
@@ -64,13 +64,13 @@ Keep source files separate where possible:
 
 ## Verify
 
-Run the bundled helpers when Python is available:
+Run the bundled helpers when Python is available. The prompt builder is optional; natural-language style direction is the primary interface:
 
 ```bash
 python3 scripts/platform_presets.py --list
 python3 scripts/platform_presets.py --list-ratios
 python3 scripts/prompt_builder.py --list-styles
-python3 scripts/prompt_builder.py --style S01 --ratio 16:9 --title "400+ Figma Templates"
+python3 scripts/prompt_builder.py --style S01 --ratio 16:9 --title "400+ Figma Templates"  # optional catalog helper
 python3 scripts/verify_thumbnail.py output.png --platform wechat-channels
 python3 scripts/verify_thumbnail.py output.png --ratio 4:3
 ```
@@ -83,7 +83,7 @@ Report:
 
 - the final file path and pixel dimensions;
 - the platform preset or generic ratio used;
-- the style ID used;
+- the interpreted style description and, if useful, an optional catalog tag;
 - which supplied real assets were preserved;
 - any assumptions or unsupported native-file claims;
 - a rights caveat when commercial use is requested but third-party rights are not documented.

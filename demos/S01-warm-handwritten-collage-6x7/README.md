@@ -17,7 +17,7 @@ The primary ID is `S01` because the cover is defined by warm ivory paper, navy h
 
 ```text
 $create-social-thumbnails
-使用 S01 暖白手写拼贴为主、S02 人物高点击为辅，制作 6:7 封面。
+使用暖白手写拼贴为主、人物高点击为辅，制作 6:7 封面。S01/S02 仅作为目录标签。
 主标题：{替换标题}
 重点词：{替换数字或关键词}
 使用我上传的真实人物照片和真实界面拼图。
