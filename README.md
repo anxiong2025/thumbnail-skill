@@ -8,7 +8,7 @@
 
 无需从空白画布开始：选择 `S01–S10` 风格、指定比例、上传素材并替换标题，即可让 Codex 按完整 SOP 制作和检查封面。
 
-> 当前版本：`v0.3.1`。“爆款”表示以提高信息流点击吸引力为目标的设计方法，不代表或保证播放量、点击率与商业结果。首个真实成品已经作为风格演示加入；其中第三方人物、品牌和界面素材的授权状态未确认，因此不代表可商用。
+> 当前版本：`v0.3.2`。“爆款”表示以提高信息流点击吸引力为目标的设计方法，不代表或保证播放量、点击率与商业结果。首个真实成品已经作为风格演示加入；其中第三方人物、品牌和界面素材的授权状态未确认，因此不代表可商用。
 
 ## 核心能力
 
@@ -43,31 +43,17 @@
 
 使用时只需指定“`S01 + 6:7`”或“`S02 + 16:9`”，再替换标题和真实素材。
 
-## 平台预设
+## 热门平台推荐比例
 
-| 平台 | 默认画布 | 比例 | 说明 |
+| 平台 | 推荐画布 | 比例 | 适用内容 |
 |---|---:|---:|---|
-| 小红书 | 1080 × 1440 | 3:4 | 常用图文封面工作预设 |
-| 视频号 | 1080 × 1260 | 6:7 | 常用信息流封面工作预设 |
-| YouTube | 3840 × 2160 | 16:9 | 官方当前推荐尺寸 |
-| YouTube Shorts | 2160 × 3840 | 9:16 | 官方当前推荐尺寸 |
-| 抖音 | 1080 × 1920 | 9:16 | 常用竖版工作预设 |
+| 小红书 | 1080 × 1440 | 3:4 | 图文笔记、知识分享、产品种草 |
+| 视频号 | 1080 × 1260 | 6:7 | 视频号信息流封面 |
+| YouTube | 3840 × 2160 | 16:9 | 常规横版视频缩略图 |
+| YouTube Shorts | 2160 × 3840 | 9:16 | Shorts 竖版缩略图 |
+| 抖音 | 1080 × 1920 | 9:16 | 全屏竖版短视频封面 |
 
 平台界面会变化，小红书、视频号和抖音的尺寸在本项目中属于实用工作预设；发布前仍应检查当时 App 的裁切预览。YouTube 尺寸依据 [YouTube Help](https://support.google.com/youtube/answer/72431?hl=en)。
-
-### 独立比例预设
-
-不指定平台时，也可以直接生成这些比例：
-
-| 比例 | 默认画布 | 常见用途 |
-|---:|---:|---|
-| `1:1` | 1080 × 1080 | 方形社交封面 |
-| `4:3` | 1600 × 1200 | 横版展示、经典视频封面 |
-| `3:4` | 1080 × 1440 | 竖版社交封面 |
-| `4:5` | 1080 × 1350 | 竖版信息流 |
-| `6:7` | 1080 × 1260 | 视频号式竖版封面 |
-| `16:9` | 1920 × 1080 | 通用横版视频封面 |
-| `9:16` | 1080 × 1920 | 全屏竖版视频封面 |
 
 ## 安装
 
@@ -150,8 +136,6 @@ $create-social-thumbnails 审核这张抖音封面：检查小图可读性、安
 
 ```bash
 python3 create-social-thumbnails/scripts/platform_presets.py --list
-python3 create-social-thumbnails/scripts/platform_presets.py --list-ratios
-python3 create-social-thumbnails/scripts/platform_presets.py --ratio 4:3 --json
 python3 create-social-thumbnails/scripts/platform_presets.py --platform wechat --json
 ```
 
@@ -166,7 +150,6 @@ python3 create-social-thumbnails/scripts/prompt_builder.py --style S01 --ratio 1
 
 ```bash
 python3 create-social-thumbnails/scripts/verify_thumbnail.py cover.png --platform wechat-channels
-python3 create-social-thumbnails/scripts/verify_thumbnail.py cover.png --ratio 4:3
 python3 create-social-thumbnails/scripts/verify_thumbnail.py cover.jpg --platform youtube --aspect-only
 ```
 

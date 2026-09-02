@@ -8,7 +8,7 @@ Create high-CTR thumbnails and creator covers for Xiaohongshu, WeChat Channels, 
 
 Start from a proven visual system instead of a blank canvas: choose a style from `S01–S10`, set the ratio, attach the assets, and replace the title. Codex then follows the production and QA workflow.
 
-> Current version: `v0.3.1`. “High-CTR” describes the design objective and does not promise views, click-through rate, virality, or commercial results. The first real finished cover is included as a style demonstration. Rights for third-party people, brands, and interface imagery are not established, so the example is not presented as commercially cleared.
+> Current version: `v0.3.2`. “High-CTR” describes the design objective and does not promise views, click-through rate, virality, or commercial results. The first real finished cover is included as a style demonstration. Rights for third-party people, brands, and interface imagery are not established, so the example is not presented as commercially cleared.
 
 ## What it does
 
@@ -43,31 +43,17 @@ The existing Figma-template cover is classified as **`S01 Warm Handwritten Colla
 
 To use one, specify something like “`S01 + 6:7`” or “`S02 + 16:9`,” then replace the title and attach the real assets.
 
-## Platform presets
+## Recommended ratios for popular platforms
 
-| Platform | Default canvas | Ratio | Note |
+| Platform | Recommended canvas | Ratio | Best for |
 |---|---:|---:|---|
-| Xiaohongshu | 1080 × 1440 | 3:4 | Common image-note working preset |
-| WeChat Channels | 1080 × 1260 | 6:7 | Common feed-cover working preset |
-| YouTube | 3840 × 2160 | 16:9 | Current official recommendation |
-| YouTube Shorts | 2160 × 3840 | 9:16 | Current official recommendation |
-| Douyin | 1080 × 1920 | 9:16 | Common vertical working preset |
+| Xiaohongshu | 1080 × 1440 | 3:4 | Image notes, explainers, product discovery |
+| WeChat Channels | 1080 × 1260 | 6:7 | WeChat Channels feed covers |
+| YouTube | 3840 × 2160 | 16:9 | Standard landscape video thumbnails |
+| YouTube Shorts | 2160 × 3840 | 9:16 | Vertical Shorts thumbnails |
+| Douyin | 1080 × 1920 | 9:16 | Full-height vertical short-video covers |
 
 Platform interfaces change. The Xiaohongshu, WeChat Channels, and Douyin dimensions are practical project presets, so check the current in-app crop preview before publishing. The YouTube values follow [YouTube Help](https://support.google.com/youtube/answer/72431?hl=en).
-
-### Ratio-only presets
-
-You can also generate a cover by ratio without naming a platform:
-
-| Ratio | Default canvas | Typical use |
-|---:|---:|---|
-| `1:1` | 1080 × 1080 | Square social cover |
-| `4:3` | 1600 × 1200 | Landscape presentation or classic video cover |
-| `3:4` | 1080 × 1440 | Portrait social cover |
-| `4:5` | 1080 × 1350 | Portrait feed cover |
-| `6:7` | 1080 × 1260 | WeChat Channels-style portrait cover |
-| `16:9` | 1920 × 1080 | General landscape video cover |
-| `9:16` | 1080 × 1920 | Full-height vertical video cover |
 
 ## Installation
 
@@ -150,8 +136,6 @@ Inspect presets:
 
 ```bash
 python3 create-social-thumbnails/scripts/platform_presets.py --list
-python3 create-social-thumbnails/scripts/platform_presets.py --list-ratios
-python3 create-social-thumbnails/scripts/platform_presets.py --ratio 4:3 --json
 python3 create-social-thumbnails/scripts/platform_presets.py --platform wechat --json
 ```
 
@@ -166,7 +150,6 @@ Verify a PNG or JPEG export:
 
 ```bash
 python3 create-social-thumbnails/scripts/verify_thumbnail.py cover.png --platform wechat-channels
-python3 create-social-thumbnails/scripts/verify_thumbnail.py cover.png --ratio 4:3
 python3 create-social-thumbnails/scripts/verify_thumbnail.py cover.jpg --platform youtube --aspect-only
 ```
 
