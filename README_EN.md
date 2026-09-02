@@ -4,7 +4,7 @@ English | [简体中文](README.md)
 
 A Codex skill for designing, adapting, and reviewing social-media thumbnails with the user's real portraits, products, and screenshots. It includes working presets for Xiaohongshu, WeChat Channels, YouTube, YouTube Shorts, and Douyin.
 
-> Current version: `v0.2.0`. Visual demos will be added only after their asset rights are documented. The initial style library does not pad the gallery with fake interfaces or AI substitute people.
+> Current version: `v0.2.1`. The first real finished cover is included as a style demonstration. Rights for third-party people, brands, and interface imagery are not established, so the example is not presented as commercially cleared.
 
 ## What it does
 
@@ -16,22 +16,24 @@ A Codex skill for designing, adapting, and reviewing social-media thumbnails wit
 - Includes dependency-free Python helpers for presets and PNG/JPEG dimension checks.
 - Includes ten reusable style IDs, bilingual copy-ready prompts, and a prompt builder.
 
-## Choose a cover style
+## Thumbnail examples
 
 See the full [style catalog](create-social-thumbnails/references/style-catalog.md) and the copy-ready [English prompt library](PROMPTS_EN.md).
 
-| ID | Style | Best for |
-|---|---|---|
-| `S01` | Warm Handwritten Collage | Resource packs, templates, design collections |
-| `S02` | Face-led High CTR | Personal brands, tutorials, reactions |
-| `S03` | Clean UI Showcase | SaaS, apps, Figma, workflows |
-| `S04` | Dark Tech Neon | AI, coding, automation, fintech |
-| `S05` | Bold Number List | Collections, rankings, comparisons |
-| `S06` | Before–After Split | Redesigns, transformations, tests |
-| `S07` | News Commentary | News, analysis, explainers |
-| `S08` | Premium Editorial | Brands, interviews, thought leadership |
-| `S09` | Playful Sticker | Lifestyle, education, creator tips |
-| `S10` | Product Hero | Launches, reviews, e-commerce |
+| ID | Preview | Style | Best for |
+|---|---|---|---|
+| `S01` | <a href="demos/S01-warm-handwritten-collage-6x7/preview.png"><img src="demos/S01-warm-handwritten-collage-6x7/preview.png" width="180" alt="S01 Warm Handwritten Collage thumbnail"></a> | Warm Handwritten Collage | Resource packs, templates, design collections |
+| `S02` | Coming soon | Face-led High CTR | Personal brands, tutorials, reactions |
+| `S03` | Coming soon | Clean UI Showcase | SaaS, apps, Figma, workflows |
+| `S04` | Coming soon | Dark Tech Neon | AI, coding, automation, fintech |
+| `S05` | Coming soon | Bold Number List | Collections, rankings, comparisons |
+| `S06` | Coming soon | Before–After Split | Redesigns, transformations, tests |
+| `S07` | Coming soon | News Commentary | News, analysis, explainers |
+| `S08` | Coming soon | Premium Editorial | Brands, interviews, thought leadership |
+| `S09` | Coming soon | Playful Sticker | Lifestyle, education, creator tips |
+| `S10` | Coming soon | Product Hero | Launches, reviews, e-commerce |
+
+The existing Figma-template cover is classified as **`S01 Warm Handwritten Collage` as the primary style, with `S02 Face-led High CTR` as a secondary trait**. It uses `S01` as its main ID because the defining system is ivory paper, marker typography, coral/blue strokes, a real interface collage, and a title gradient; the person strengthens the click driver without defining the base layout. See the [full demo notes](demos/S01-warm-handwritten-collage-6x7/README.md).
 
 To use one, specify something like “`S01 + 6:7`” or “`S02 + 16:9`,” then replace the title and attach the real assets.
 
