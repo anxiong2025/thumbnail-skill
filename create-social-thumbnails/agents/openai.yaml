@@ -1,0 +1,8 @@
+interface:
+  display_name: "Social Thumbnail Studio"
+  short_description: "Create platform-ready covers from real assets"
+  brand_color: "#1458E8"
+  default_prompt: "Use $create-social-thumbnails to make a platform-ready cover from my real assets and style references."
+
+policy:
+  allow_implicit_invocation: true
