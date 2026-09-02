@@ -1,8 +1,8 @@
 # Demos / 示例
 
-This directory is reserved for finished, reproducible thumbnail examples. It is intentionally empty of visual assets in the initial release.
+This directory contains finished thumbnail examples and their reproduction and asset-rights notes.
 
-本目录用于后续添加可复现的封面案例。首个版本不放假图，也不把用户私有素材直接发布到仓库。
+本目录用于存放可复现的封面案例。每个示例必须说明真实素材、复现方式和授权状态；不要用假图替代真实产品或人物。
 
 Each demo should contain:
 

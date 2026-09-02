@@ -195,7 +195,7 @@ thumbnail-skill/
 
 ## Demo policy
 
-Future examples belong in [`demos/`](demos/). Each demo must include its platform, dimensions, inputs, output, reproduction steps, and `LICENSE-ASSETS.md`. Do not publish private user photos, unlicensed celebrity images, third-party templates, or fonts.
+Future examples belong in [`demos/`](demos/). Each demo must include its platform, dimensions, inputs, output, reproduction steps, and `LICENSE-ASSETS.md`. Public demos should prefer owned or licensed assets. If the repository owner explicitly includes a rights-unverified style example, it must be labeled separately, excluded from the MIT License, and never presented as commercially cleared.
 
 ## License and commercial-use notice
 
