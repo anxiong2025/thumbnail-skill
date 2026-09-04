@@ -19,3 +19,4 @@ Name each demo with an optional style ID and ratio when practical, for example `
 ## Current demos / 当前示例
 
 - [`S01-warm-handwritten-collage-6x7`](S01-warm-handwritten-collage-6x7/) — 暖白手写拼贴为主、人物高点击为辅；目录标签为 S01/S02，6:7 视频号画布。
+- [`S11-signal-impact-6x7`](S11-signal-impact-6x7/) — 当前旗舰“信号冲击大字”；钩子标题、偏移人物轮廓、编号证据卡与信号条组成原创 6:7 视频号系统。

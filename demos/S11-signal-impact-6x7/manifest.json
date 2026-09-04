@@ -1,0 +1,35 @@
+{
+  "style": "S11 Creator Impact / 真人高密度大字",
+  "output": "preview.png",
+  "preview": "preview-small.png",
+  "platform": "wechat-channels",
+  "width": 1080,
+  "height": 1260,
+  "format": "PNG",
+  "palette": "pale yellow, white, near-black, green, coral",
+  "copy": {
+    "context": "ANTHROPIC · 新模型实测",
+    "models": "Fable 5.1 × Mythos 5.1",
+    "hook": "Fable 5.1 真能打吗？",
+    "support": "Mythos 5.1 同场对打",
+    "scope": "7 项能力横评",
+    "proof_chips": ["科研能力 52.6%", "Agent 编码 60.9%"],
+    "evidence_label": "实测 01",
+    "fact_highlight": "60.9% 编码",
+    "closing_rail": "不只看榜单｜真实体验到底怎么样？"
+  },
+  "exact_use_assets": [
+    "input/portrait-cutout-checker.png",
+    "input/anthropic-mark.png",
+    "input/benchmark-source.png"
+  ],
+  "generated_or_original_support": [
+    "darkened benchmark interface wall",
+    "hook treatment",
+    "offset cutout contour",
+    "numbered evidence card",
+    "interface panels"
+  ],
+  "portrait_treatment": "supplied cutout pixels; checkerboard removed; scaled as an edge-bleeding foreground shape",
+  "commercially_cleared": false
+}

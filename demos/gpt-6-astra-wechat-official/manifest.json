@@ -1,0 +1,35 @@
+{
+  "topic": "GPT-6 Astra",
+  "style": "Creator Impact / 真人高密度大字 — proof-led adaptation",
+  "outputs": [
+    {
+      "file": "gpt-6-astra-wechat-2.35x1.png",
+      "placement": "WeChat Official Account message list",
+      "width": 1880,
+      "height": 800,
+      "ratio": "2.35:1"
+    },
+    {
+      "file": "gpt-6-astra-wechat-1x1.png",
+      "placement": "WeChat share card and profile",
+      "width": 1200,
+      "height": 1200,
+      "ratio": "1:1"
+    }
+  ],
+  "copy": {
+    "label": "今日新模型",
+    "title": "GPT-6 Astra 来了",
+    "proof_1": "ARC-AGI-3 99.9%",
+    "proof_2": "科学任务 64%"
+  },
+  "source_assets": [
+    "input/astra-galaxy-6.png",
+    "input/terminal-bench-science.png",
+    "input/arc-agi-3.png",
+    "input/frontiermath.png"
+  ],
+  "generation": "built-in image generation followed by exact-ratio export",
+  "claims_independently_verified": false,
+  "commercially_cleared": false
+}

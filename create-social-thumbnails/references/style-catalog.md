@@ -14,6 +14,7 @@ The IDs below are optional catalog labels for browsing, demos, and internal note
 | `S08` | Premium Editorial / 高级杂志 | Branding, interviews, thought leadership | Typography + art direction |
 | `S09` | Playful Sticker / 活力贴纸 | Lifestyle, education, creator tips | Color + hand-drawn cues |
 | `S10` | Product Hero / 产品主视觉 | Launches, reviews, e-commerce | Product + benefit |
+| `S11` | Creator Impact / 真人高密度大字 | AI tutorials, product tests, beginner explainers | Huge hook + face + real interface + proof |
 
 ## S01 — Warm Handwritten Collage / 暖白手写拼贴
 
@@ -96,6 +97,13 @@ The IDs below are optional catalog labels for browsing, demos, and internal note
 - Effect: controlled lighting, shadow, and depth.
 - Avoid: altering packaging, logos, ports, materials, or product proportions.
 
+## S11 — Creator Impact / 真人高密度大字
+
+- Signature: two or three lines of enormous pale-yellow/white text with a thick black keyline, an expressive real cutout, a topic-related interface background, one real proof card, and short arrows/check items.
+- Hierarchy: hook first, face second, large count third, proof fourth. Use controlled overlap and leave no unexplained central gap.
+- Reference handling: match a supplied reference's general title scale, density, subject ratio, background category, card rhythm, outline weight, and decoration language while replacing all content with the user's own assets.
+- Avoid: unrelated abstract backgrounds, framed cutouts, thin type, clean editorial spacing, generated lookalike faces, fake UI/data, or weak 20%-scale headlines.
+
 ## Selection rules
 
 - Use `S01`, `S03`, or `S05` when real screenshots are the main proof.
@@ -104,5 +112,6 @@ The IDs below are optional catalog labels for browsing, demos, and internal note
 - Use `S06` only when the before and after are comparable and truthful.
 - Use `S08` when authority and taste matter more than maximum visual noise.
 - Use `S09` for approachable creator content and `S10` for a single product story.
+- Use `S11` as the current production focus when an expressive person, conversational hook, topic-related interface, and real proof must form one dense creator-cover system. Prefer `S02` when the user explicitly wants a cleaner result.
 
 When two styles are requested, choose one as the base and borrow at most one secondary trait. Natural combinations such as “暖白手写拼贴，加一点人物高点击” are preferred; the equivalent catalog note may be `S01 + S02`, but the user does not need to provide those IDs.

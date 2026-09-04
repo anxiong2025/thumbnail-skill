@@ -22,6 +22,13 @@
 - [ ] Contrast is sufficient without excessive outlines or glow.
 - [ ] Gradient improves the title-to-image transition without hiding key proof.
 - [ ] Essential content stays inside the recommended safe area.
+- [ ] For Creator Impact covers, the hook occupies roughly 35–45% of a vertical canvas and remains readable at feed size.
+- [ ] The real person occupies 35–55%, bleeds naturally off an edge when useful, and is never put back inside a photo frame.
+- [ ] A usable topic screenshot or environment drives the background; no unrelated abstract field replaces it.
+- [ ] The proof card, count, arrow, and up to three check items form one compact flow with no unexplained central dead zone.
+- [ ] Portrait cutout was checked on light and dark backgrounds; there is no rectangular residue, black halo, clipped hat/hair, or broken shoulder edge.
+- [ ] Generated background elements do not contain person-shaped placeholders, fake screenshot frames, pseudo-text, generic comic bursts, or unrelated gaming decoration.
+- [ ] Project files and delivery notes use the repository's `Creator Impact / 真人高密度大字` name.
 
 ## Technical export
 

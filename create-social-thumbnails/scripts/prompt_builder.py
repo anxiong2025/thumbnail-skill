@@ -19,13 +19,14 @@ STYLES = {
     "S08": {"zh": "高级杂志：中性低饱和背景、衬线与无衬线搭配、高清主体和大面积负空间。", "en": "Premium Editorial: neutral muted background, serif/sans pairing, high-quality subject, and deliberate negative space."},
     "S09": {"zh": "活力贴纸：亮色或暖纸张、真人或真实产品、原创涂鸦胶带、两到三种强调色。", "en": "Playful Sticker: bright blocks or warm paper, real subject or product, original doodles and tape, and two or three accent colors."},
     "S10": {"zh": "产品主视觉：真实产品为唯一主角、收益优先标题、简洁品牌背景和自然光影。", "en": "Product Hero: one real hero product, benefit-first title, clean brand setting, and natural light and shadow."},
+    "S11": {"zh": "真人高密度大字：超大浅黄/白粗黑描边标题、35%-55%真人抠图、真实界面背景、倾斜证据卡、大数字、箭头和绿色勾选项。", "en": "Creator Impact: huge pale-yellow/white black-keylined title, 35%-55% real cutout, topic-related interface background, tilted proof card, large count, arrows, and green checks."},
 }
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--list-styles", action="store_true", help="List available style IDs")
-    parser.add_argument("--style", help="Style ID S01 through S10")
+    parser.add_argument("--style", help="Style ID S01 through S11")
     parser.add_argument("--ratio", help="Ratio such as 4:3, 16:9, or 9:16")
     parser.add_argument("--title", default="{主标题 / main title}")
     parser.add_argument("--subtitle")
@@ -51,9 +52,10 @@ def main() -> int:
     preset = RATIO_PRESETS[ratio]
 
     if args.language == "zh":
-        subtitle = args.subtitle or "{可选副标题}"
+        subtitle = args.subtitle or ("根据主题自动写一条短副标题，并从证据提炼最多三条短标签" if style_id == "S11" else "{可选副标题}")
         assets = args.assets or "{已上传的真人、产品、截图和 Logo}"
-        colors = args.colors or "{品牌色或自动选择}"
+        colors = args.colors or ("柔和浅黄 #FDFFA7、白色、近黑色，绿色勾选与少量珊瑚红标签" if style_id == "S11" else "{品牌色或自动选择}")
+        style_rule = "\nS11 专用规则：标题占竖版高度35%-45%，真人占35%-55%；主标题和大数字使用粗犷手绘/马克笔字形，副标题、模型名、分数和勾选项使用规整粗黑体；使用真实界面或截图延展为背景；加入一张倾斜证据卡、大数字、粗箭头和最多三条绿色勾选；禁止无关抽象背景、全画面手写小字、细字体、相框式抠图和大面积留白。" if style_id == "S11" else ""
         prompt = f"""$create-social-thumbnails
 请制作一张社交媒体封面。
 风格编号：{style_id}
@@ -65,12 +67,14 @@ def main() -> int:
 副标题：{subtitle}
 真实素材：{assets}
 品牌色：{colors}
+{style_rule}
 
 必须使用我上传的真实素材。不要生成、重绘或替换人物、产品、Logo、数据和界面截图。参考图只用于构图、层级和配色方向。标题在手机信息流小图中仍要清楚，重要内容保留安全边距。完成后说明最终尺寸、使用的真实素材和未确认的授权风险。"""
     else:
-        subtitle = args.subtitle or "{optional supporting title}"
+        subtitle = args.subtitle or ("write one short supporting line from the topic and up to three proof chips from supplied evidence" if style_id == "S11" else "{optional supporting title}")
         assets = args.assets or "{uploaded real portraits, products, screenshots, and logos}"
-        colors = args.colors or "{brand colors or auto-select}"
+        colors = args.colors or ("pale yellow #FDFFA7, white, near-black, bright green checks, and one coral-red label" if style_id == "S11" else "{brand colors or auto-select}")
+        style_rule = "\nS11 rule: title uses 35%-45% of vertical height and the real cutout uses 35%-55%; use chunky hand-painted/marker forms for the main hook and large count, but clean heavy sans for subtitles, model names, scores, and check items; extend a real interface or screenshot into the background; add one tilted proof card, a large count, a thick arrow, and up to three green checks; forbid unrelated abstract backgrounds, all-handwritten small copy, thin type, framed cutouts, and large empty gaps." if style_id == "S11" else ""
         prompt = f"""$create-social-thumbnails
 Create a social-media thumbnail.
 Style ID: {style_id}
@@ -82,6 +86,7 @@ Main title: {args.title}
 Supporting title: {subtitle}
 Real assets: {assets}
 Brand colors: {colors}
+{style_rule}
 
 Use my uploaded real assets. Do not generate, redraw, or replace people, products, logos, data, or interface screenshots. Treat references as direction for composition, hierarchy, and color only. Keep the title readable at mobile feed size and essential content inside safe margins. On delivery, report final dimensions, preserved real assets, and unresolved rights risks."""
 

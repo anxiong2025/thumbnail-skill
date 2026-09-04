@@ -6,13 +6,13 @@ Create high-CTR thumbnails and creator covers for Xiaohongshu, WeChat Channels, 
 
 > **Real assets × click-driving structures × multi-platform ratios × copy-ready prompts**
 
-Start from a proven visual system instead of a blank canvas: describe the style you want (for example, “warm handwritten collage”), set the ratio, attach the assets, and replace the title. Codex then follows the production and QA workflow. `S01–S10` are optional catalog labels.
+The current release focuses on one reliable flagship: attach a real person, real proof, and an optional style reference, then provide a topic and ratio to create an `S11 Creator Impact` cover. The system writes the supporting copy automatically. Catalog IDs remain optional.
 
-> Current version: `v0.3.4`. “High-CTR” describes the design objective and does not promise views, click-through rate, virality, or commercial results. The first real finished cover is included as a style demonstration. Rights for third-party people, brands, and interface imagery are not established, so the example is not presented as commercially cleared.
+> Current version: `v0.6.0`. “High-CTR” describes the design objective and does not promise views, click-through rate, virality, or commercial results.
 
 ## What it does
 
-- Includes ten click-driving creator-cover systems for people, products, knowledge, resources, news, and UI showcases.
+- Concentrates on one flagship system, `S11 Creator Impact`; the other ten catalog systems remain a roadmap.
 - Builds hierarchy around one-second comprehension, small-preview readability, and visible real proof.
 - Supports five platform/content presets across horizontal and vertical layouts.
 - Separates exact-use assets, style-only references, and generatable decoration.
@@ -38,10 +38,26 @@ See the full [style catalog](create-social-thumbnails/references/style-catalog.m
 | `S08` | Coming soon | Premium Editorial | Brands, interviews, thought leadership | `$create-social-thumbnails Premium editorial at 4:5 with muted neutrals, a high-quality real subject, elegant serif type, and deliberate negative space.` |
 | `S09` | Coming soon | Playful Sticker | Lifestyle, education, creator tips | `$create-social-thumbnails Playful sticker at 3:4 with a real person or product, original doodles and tape, and two or three accent colors.` |
 | `S10` | Coming soon | Product Hero | Launches, reviews, e-commerce | `$create-social-thumbnails Product hero at 1:1. Make the real product the hero, lead with the core benefit, and use a clean brand field with natural light.` |
+| `S11` | <a href="demos/S11-signal-impact-6x7/preview.png"><img src="demos/S11-signal-impact-6x7/preview.png" width="180" alt="S11 Creator Impact thumbnail"></a> | Creator Impact | AI tutorials, product tests, beginner explainers, strong opinions | `$create-social-thumbnails Creator Impact at 6:7. Write the hook from my topic, let the real person occupy about 45%, extend my real interface into the background, and add one tilted proof card, a large count, an arrow, and up to three green checks.` |
 
 The existing Figma-template cover is classified as **`S01 Warm Handwritten Collage` as the primary style, with `S02 Face-led High CTR` as a secondary trait**. It uses `S01` as its main ID because the defining system is ivory paper, marker typography, coral/blue strokes, a real interface collage, and a title gradient; the person strengthens the click driver without defining the base layout. See the [full demo notes](demos/S01-warm-handwritten-collage-6x7/README.md).
 
 To use one, say something like “warm handwritten collage + 6:7” or “face-led high CTR + 16:9,” then replace the title and attach the real assets. Catalog IDs are optional.
+
+### Current flagship: S11 Creator Impact
+
+`S11 Creator Impact / 真人高密度大字` is the repository's concentrated high-density feed system. Its reading order is **huge hook → face → large count → proof → check items**.
+
+- **Hook:** two or three huge pale-yellow/white lines with a very thick dark keyline, occupying about 35%–45% of a vertical canvas.
+- **Person:** the real cutout occupies 35%–55%, sits in the lower half, uses a pale contour, and may bleed off an edge. Never frame an existing cutout like a photo.
+- **Background:** enlarge, soften, and dim the supplied room, interface, benchmark, or product screen instead of inventing an unrelated abstract field.
+- **Proof:** use one tilted real proof card, a large count, a thick arrow, and up to three green check items.
+- **Type hierarchy:** use chunky hand-painted/marker rhythm for the main hook and large count; keep subtitles, model names, scores, evidence labels, and checks in a clean heavy sans.
+- **Rebuild conditions:** small headline, person below 35%, framed cutout, unrelated background, thin type, large empty gap, invented evidence, or altered identity.
+
+See [`signal-impact-system.md`](create-social-thumbnails/references/signal-impact-system.md) for the full system. Other styles will resume only after the flagship has a stable demo, reusable workflow, and quality baseline.
+
+See the [full S11 demo, reproduction steps, and asset-rights notes](demos/S11-signal-impact-6x7/README.md).
 
 ## Recommended ratios for popular platforms
 

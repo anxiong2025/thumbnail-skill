@@ -43,6 +43,18 @@ Best for 16:9 comparison, reaction, challenge, and transformation topics.
 - Avoid placing important content in the lower-right duration-badge area.
 - Test at approximately 10–15% of full size.
 
+## 5. Creator Impact
+
+Best for dense vertical AI tutorials, product tests, beginner explainers, and strong conversational questions. Read [signal-impact-system.md](signal-impact-system.md) for the flagship signatures, palettes, and delivery gate.
+
+- Headline occupies roughly 35–45% of a vertical canvas. Use two or three tightly stacked pale-yellow/white lines with a very thick dark keyline; the hook must remain readable at 25% scale.
+- Portrait occupies 35–55%, with the eyes and mouth unobstructed. Let the cutout overlap the headline or proof slightly so the groups feel connected, but do not cover key words or data.
+- Real proof occupies 15–30%. Use one meaningful crop rather than a full-page screenshot.
+- Keep title, portrait, and proof within one compact visual triangle. A central gap larger than 12% of canvas height is a failed composition, not useful negative space.
+- Use one thick hand-drawn arrow and up to three green check items to connect the hook, person, large count, and proof.
+- Extend a real topic interface, room, benchmark, or product screen into the background. Do not replace usable context with an unrelated abstract field.
+- Inspect the portrait mask on both a light and dark field. Any leftover rectangular background, black halo, clipped hat/hair, or broken shoulder edge must be fixed before delivery.
+
 ## Variant strategy
 
 When the user wants alternatives, create variants with different hypotheses:
